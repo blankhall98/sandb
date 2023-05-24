@@ -4,7 +4,7 @@
 
 <br>
 <div class="container">
-    <h5 class="text-dark">Main Info</h5>
+    <h5 class="text-dark"><b>Main Info</b></h5>
     <ul class="list-group">
         <li class="list-group-item">Couple</li>
     </ul>
@@ -12,7 +12,7 @@
 
 <br>
 <div class="container">
-    <h5 class="text-dark">Statistics</h5>
+    <h5 class="text-dark"><b>Statistics</b></h5>
     <ul class="list-group">
         <li class="list-group-item">Start Date</li>
         <li class="list-group-item">Level</li>
@@ -21,14 +21,14 @@
 </div>
 <br>
 <div class="container">
-    <h5 class="text-dark">Actions</h5>
+    <h5 class="text-dark"><b>Actions</b></h5>
     <ul class="list-group">
-        <li class="list-group-item">Travels</li>
-        <li class="list-group-item">Wanderungs</li>
-        <li class="list-group-item">Restaurants</li>
-        <li class="list-group-item">Movies</li>
-        <li class="list-group-item">Plans</li>
-        <li class="list-group-item">Messages</li>
+        <li class="list-group-item d-flex justify-content-between">Travels <img src="{{url_for('static', filename='images/travel-luggage.png')}}" alt="..." class="img-action"></li>
+        <li class="list-group-item d-flex justify-content-between">Wanderungs <img src="{{url_for('static', filename='images/bicycle.png')}}" alt="..." class="img-action"></li>
+        <li class="list-group-item d-flex justify-content-between">Restaurants <img src="{{url_for('static', filename='images/Restaurant.png')}}" alt="..." class="img-action"></li>
+        <li class="list-group-item d-flex justify-content-between">Movies <img src="{{url_for('static', filename='images/cinema.png')}}" alt="..." class="img-action"></li>
+        <li class="list-group-item d-flex justify-content-between">Plans <img src="{{url_for('static', filename='images/calendar.png')}}" alt="..." class="img-action"></li>
+        <li class="list-group-item d-flex justify-content-between">Messages <img src="{{url_for('static', filename='images/conversation.png')}}" alt="..." class="img-action"></li>
     </ul>
 </div>
 {%endblock%}
