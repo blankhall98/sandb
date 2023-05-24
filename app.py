@@ -7,14 +7,23 @@ app = Flask(__name__)
 
 ########## routes
 
-#user passwords
-users = {
-    'sofy': {'password':'totoro'},
-    'blank': {'password':'aladin'}
-}
-
-rel = {
-    'level': 1
+#couple data
+coupleData = {
+    'partner1': {
+        'username': 'sofy',
+        'password': 'totoro'
+    },
+    'partner2': {
+        'username': 'blank',
+        'password': 'nietzsche'
+    },
+    'level': {
+        'level': 1,
+        'xp': 0
+    },
+    'relationship': {
+        'start-date': '26/06/2022'
+    }
 }
 
 #couple level generator
