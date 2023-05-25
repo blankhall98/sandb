@@ -5,8 +5,37 @@ from flask_restful import Api, Resource, reqparse, abort
 #initialize app
 app = Flask(__name__)
 
-########## routes
+#outside functions
+def createLevels(max_lvl,base):
+    xp_req = [base]
+    for i in range(max_lvl):
+        xp_req.append(xp_req[i]*1.25)
+    return xp_req[1:]
+#lvl = createLevels(200,10)
+def getLvl(xp,lvl):
+    if xp < lvl[0]:
+        return 1
+    elif xp > lvl[-1]:
+        return len(lvl)
+    else:
+        act_lvl = 1
+        while xp > lvl[act_lvl]:
+            act_lvl = act_lvl+1
+        
+        return act_lvl+1
 
+def getLvl(xp,lvl):
+    if xp < lvl[0]:
+        return 1
+    elif xp > lvl[-1]:
+        return len(lvl)
+    else:
+        act_lvl = 1
+        while xp > lvl[act_lvl]:
+            act_lvl = act_lvl+1
+        
+        return act_lvl+1
+    
 #couple data
 coupleData = {
     'partner1': {
@@ -26,12 +55,7 @@ coupleData = {
     }
 }
 
-#couple level generator
-def createLevels(max_lvl):
-    xp_req = [10]
-    for i in range(max_lvl):
-        xp_req.append(xp_req[i]*1.1)
-    return xp_req
+########## routes
 
 #index
 @app.route('/')
