@@ -35,14 +35,9 @@
         <a href="{{ url_for('onwork') }}"><li class="list-group-item d-flex justify-content-between mb-1">Restaurants <img src="{{url_for('static', filename='images/restaurant.png')}}" alt="..." class="img-action"></li></a>
         <a href="{{ url_for('onwork') }}"><li class="list-group-item d-flex justify-content-between mb-1">Movies <img src="{{url_for('static', filename='images/cinema.png')}}" alt="..." class="img-action"></li></a>
         <a href="{{ url_for('onwork') }}"><li class="list-group-item d-flex justify-content-between mb-1">Plans <img src="{{url_for('static', filename='images/calendar.png')}}" alt="..." class="img-action"></li></a>
-        <a href="{{ url_for('onwork') }}"><li class="list-group-item d-flex justify-content-between mb-1">Messages <img src="{{url_for('static', filename='images/chat.png')}}" alt="..." class="img-action"></li></a>
+        <a href="{{ url_for('messages') }}"><li class="list-group-item d-flex justify-content-between mb-1">Messages <img src="{{url_for('static', filename='images/chat.png')}}" alt="..." class="img-action"></li></a>
     </ul>
 </div>
 <br>
 
-<br><br>
-    <div class="container d-flex justify-content-center">
-        <a href="{{url_for('login')}}"><div class="btn btn-outline-dark">log out</div></a>
-    </div>
-<br>
 {%endblock%}
