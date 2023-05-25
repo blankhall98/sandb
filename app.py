@@ -38,6 +38,11 @@ def createLevels(max_lvl):
 def index():
     return render_template('index.html')
 
+#login
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 #travels
 @app.route('/travels')
 def travels():
