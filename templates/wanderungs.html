@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block title%}Wanderungs{%endblock%}
+{%block content%}
+
+<div class="container d-flex align-items-center flex-column">
+    <h2><b>Wanderungs</b></h2>
+    <img src="{{url_for('static', filename='images/bicycle.png')}}" alt="" style="height: 3em; width: 3em;">
+    <small>
+        keep track of concerts, museums, parks and great times outside!
+    </small>
+    <button class="btn btn-warning mt-3">add wanderung</button>
+</div>
+
+<div class="container">
+    <div class="container"></div>
+</div>
+
+{%endblock%}

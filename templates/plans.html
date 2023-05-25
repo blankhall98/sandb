@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block title%}Plans{%endblock%}
+{%block content%}
+
+<div class="container d-flex align-items-center flex-column">
+    <h2><b>Plans</b></h2>
+    <img src="{{url_for('static', filename='images/calendar.png')}}" alt="" style="height: 3em; width: 3em;">
+    <small>
+        have any future plans in mind? add them here!
+    </small>
+    <button class="btn btn-warning mt-3">add plan</button>
+</div>
+
+<div class="container">
+    <div class="container"></div>
+</div>
+
+{%endblock%}

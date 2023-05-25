@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block title%}Movies{%endblock%}
+{%block content%}
+
+<div class="container d-flex align-items-center flex-column">
+    <h2><b>Movies</b></h2>
+    <img src="{{url_for('static', filename='images/cinema.png')}}" alt="" style="height: 3em; width: 3em;">
+    <small>
+        add, see and edit movies you saw
+    </small>
+    <button class="btn btn-warning mt-3">add movie</button>
+</div>
+
+<div class="container">
+    <div class="container"></div>
+</div>
+
+{%endblock%}
