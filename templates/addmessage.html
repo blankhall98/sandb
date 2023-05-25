@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{% block title%}Add Message{%endblock%}
+{%block content%}
+
+<div class="container d-flex align-items-center flex-column">
+    <h2><b>Add new Message</b></h2>
+    <img src="{{url_for('static', filename='images/chat.png')}}" alt="" style="height: 3em; width: 3em;">
+    <small>
+        Add a new message to your 'Messages' section. Fill in the form.
+    </small>
+</div>
+
+{%endblock%}

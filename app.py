@@ -49,6 +49,9 @@ def travels():
     return render_template('travels.html')
 
 #add travel
+@app.route('/addtravel')
+def addtravel():
+    return render_template('addtravel.html')
 
 #wanderungs
 @app.route('/wanderungs')
@@ -56,6 +59,9 @@ def wanderungs():
     return render_template('wanderungs.html')
 
 #add wanderung
+@app.route('/addwanderung')
+def addwanderung():
+    return render_template('addwanderung.html')
 
 #restaurants
 @app.route('/restaurants')
@@ -63,6 +69,9 @@ def restaurants():
     return render_template('restaurants.html')
 
 #add restaurant
+@app.route('/addrestaurant')
+def addrestaurant():
+    return render_template('addrestaurant.html')
 
 #movies
 @app.route('/movies')
@@ -70,6 +79,9 @@ def movies():
     return render_template('movies.html')
 
 #add movie
+@app.route('/addmovie')
+def addmovie():
+    return render_template('addmovie.html')
 
 #plans
 @app.route('/plans')
@@ -77,6 +89,9 @@ def plans():
     return render_template('plans.html')
 
 #add plan
+@app.route('/addplan')
+def addplan():
+    return render_template('addplan.html')
 
 #messages
 @app.route('/messages')
@@ -84,6 +99,9 @@ def messages():
     return render_template('messages.html')
 
 #add message
+@app.route('/addmessage')
+def addmessage():
+    return render_template('addmessage.html')
 
 #onwork
 @app.route('/onwork')
