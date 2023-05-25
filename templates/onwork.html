@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%block title%} Work in Progress {%endblock%}
+{%block content%}
+<br>
+<div class="container d-flex flex-column align-items-center">
+    <h3>Oops, this is akward!</h3>
+    <img src="{{url_for('static', filename='images/confuse.png')}}" alt="" style="width: 5em; height: 5em; margin: 1em;">
+    <p>We are working to finish this section</p>
+    <a href="{{ url_for('index') }}"><button type="button" class="btn btn-outline-dark">Back 2 Home</button></a>
+</div>
+<br>
+{%endblock%}
