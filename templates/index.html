@@ -18,7 +18,7 @@
         <li class="list-group-item d-flex justify-content-between"><span><img src="{{url_for('static', filename='images/start.png')}}" alt="..." class="img-action"> Since</span> <i>dd/mm/yy</i></li>
         <li class="list-group-item d-flex justify-content-between align-items-center"><span><img src="{{url_for('static', filename='images/level-up.png')}}" alt="..." class="img-action"> Level</span>
            <div class="lvlbar rounded bg-dark d-flex flex-row">
-            <div class="lvlbar bg-primary rounded" style="width: 72%">
+            <div class="lvlbar bg-warning rounded" style="width: 15%">
             </div>
            </div><b>1</b></li>
         <li class="list-group-item d-flex justify-content-between"><span><img src="{{url_for('static', filename='images/medal.png')}}" alt="..." class="img-action"> Medals</span><b>0</b></li>
@@ -40,9 +40,9 @@
 </div>
 <br>
 
-<br>
+<br><br>
     <div class="container d-flex justify-content-center">
-        <a href="{{url_for('login')}}"><div class="btn btn-outline-dark btn-lg">log out</div></a>
+        <a href="{{url_for('login')}}"><div class="btn btn-outline-dark">log out</div></a>
     </div>
 <br>
 {%endblock%}
