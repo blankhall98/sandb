@@ -11,13 +11,34 @@
 </div>
 
 <br><br><br>
-<div class="container -flex align-items-center flex-column">
-    <form action="" class="d-flex align-items-center flex-column">
-        <div class="form-group mb-5">
-            <label for="message_instance">Write your message!</label>
-            <textarea class="form-control" id="message_instance" rows="3"></textarea>
+<div class="container">
+    <form action="" class="d-flex flex-column align-items-center">
+        <div class="form-group mb-3 col-9">
+            <label for="title_instance" class="mb-1">Movie Title</label>
+            <input type="text" class="form-control" id="title_instance" placeholder="Title">
         </div>
-        <button type="submit" class="btn btn-outline-dark my-3">Send Message</button>
+        <div class="form-group mb-3 col-9">
+            <label for="category_instance">Category</label>
+            <select multiple class="form-control" id="category_instance">
+              <option>Horror</option>
+              <option>Comedy</option>
+              <option>Drama</option>
+              <option>Suspense</option>
+              <option>Animated</option>
+            </select>
+        </div>
+        <div class="form-group mb-3  col-9 d-flex flex-column">
+            <label for="score_instance">Movie Score</label>
+            <small class="mb-1">Out of 5</small>
+            <select class="form-control" id="score_instance">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-outline-dark my-3">Add Movie</button>
     </form>
 </div>
 <br><br><br>
