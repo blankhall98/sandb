@@ -15,11 +15,15 @@
 <div class="container d-flex">
     <div class="container">
         <ul class="list-group">
-            <li class="list-group-item mb-3 d-flex justify-content-between px-3"><div class="d-flex flex-row align-items-center" style="margin-right: 1.2em;"><img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em; margin-right: 1em;"><i><b>PersonA</b></i></div><div>message 1</div></li>
-            <li class="list-group-item mb-3 d-flex justify-content-between px-3"><div class="d-flex flex-row align-items-center" style="margin-right: 1.2em;"><img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em; margin-right: 1em;"><i><b>PersonA</b></i></div><div>message 1</div></li>
-            <li class="list-group-item mb-3 d-flex justify-content-between px-3"><div class="d-flex flex-row align-items-center" style="margin-right: 1.2em;"><img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em; margin-right: 1em;"><i><b>PersonA</b></i></div><div>message 1</div></li>
-            <li class="list-group-item mb-3 d-flex justify-content-between px-3"><div class="d-flex flex-row align-items-center" style="margin-right: 1.2em;"><img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em; margin-right: 1em;"><i><b>PersonA</b></i></div><div>message 1</div></li>
-            <li class="list-group-item mb-3 d-flex justify-content-between px-3"><div class="d-flex flex-row align-items-center" style="margin-right: 1.2em;"><img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em; margin-right: 1em;"><i><b>PersonA</b></i></div><div>message 1</div></li>
+            {% for m in messages %}
+                <li class="list-group-item mb-3 d-flex justify-content-between px-3">
+                    <div class="d-flex flex-row align-items-center" style="margin-right: 1.2em;">
+                        <img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em; margin-right: 1em;">
+                        <i><b>{{m.person}}</b></i>
+                    </div>
+                    <div>{{m.message}}</div>
+                </li>
+            {% endfor %}
         </ul>
     </div>
 </div>

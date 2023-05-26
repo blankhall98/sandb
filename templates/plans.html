@@ -14,33 +14,17 @@
 <br><br><br>
 <div class="container">
     <div class="container d-flex flex-row justify-content-center flex-wrap">
+        {%for p in plans%}
         <div class="card col-10 mb-3">
             <div class="card-body">
-              <h5 class="card-title">Huasteca Potosina</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Temp. Date: <i>10/06/2023</i></h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">{{p.title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Temp. Date: <i>{{p.date}}</i></h6>
+              <p class="card-text">{{p.comment}}</p>
               <a href="#" class="card-link text-success">Mark as completed</a>
               <a href="#" class="card-link text-danger">Delete plan</a>
             </div>
         </div>
-        <div class="card col-10 mb-3">
-            <div class="card-body">
-              <h5 class="card-title">Huasteca Potosina</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Temp. Date: <i>10/06/2023</i></h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link text-success">Mark as completed</a>
-              <a href="#" class="card-link text-danger">Delete plan</a>
-            </div>
-        </div>
-        <div class="card col-10 mb-3">
-            <div class="card-body">
-              <h5 class="card-title">Huasteca Potosina</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Temp. Date: <i>10/06/2023</i></h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link text-success">Mark as completed</a>
-              <a href="#" class="card-link text-danger">Delete plan</a>
-            </div>
-        </div>
+        {%endfor%}
     </div>
 </div>
 <br><br><br>

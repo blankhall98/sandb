@@ -17,3 +17,5 @@ typing_extensions==4.6.0
 Werkzeug==2.2.2
 zipp==3.11.0
 Flask-SQLAlchemy==2.5.1
+psycopg2==2.9.3
+psycopg2-binary==2.9.3

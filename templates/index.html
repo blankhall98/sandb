@@ -6,7 +6,7 @@
 <div class="container">
     <h5 class="text-dark"><b>Main Info</b></h5>
     <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between"><span><img src="{{url_for('static', filename='images/heart.png')}}" alt="..." class="img-action"> Couple</span> <i>Partner Name</i></li>
+        <li class="list-group-item d-flex justify-content-between"><span><img src="{{url_for('static', filename='images/heart.png')}}" alt="..." class="img-action"> Couple</span> <i>{{partner}}</i></li>
     </ul>
 </div>
 <br>
@@ -15,12 +15,12 @@
 <div class="container">
     <h5 class="text-dark"><b>Statistics</b></h5>
     <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between"><span><img src="{{url_for('static', filename='images/start.png')}}" alt="..." class="img-action"> Since</span> <i>dd/mm/yy</i></li>
+        <li class="list-group-item d-flex justify-content-between"><span><img src="{{url_for('static', filename='images/start.png')}}" alt="..." class="img-action"> Since</span> <i>{{couple_data.start_date}}</i></li>
         <li class="list-group-item d-flex justify-content-between align-items-center"><span><img src="{{url_for('static', filename='images/level-up.png')}}" alt="..." class="img-action"> Level</span>
            <div class="lvlbar rounded bg-dark d-flex flex-row">
             <div class="lvlbar bg-warning rounded" style="width: 15%">
             </div>
-           </div><b>1</b></li>
+           </div><b>{{couple_data.level}}</b></li>
         <li class="list-group-item d-flex justify-content-between"><span><img src="{{url_for('static', filename='images/medal.png')}}" alt="..." class="img-action"> Medals</span><b>0</b></li>
     </ul>
 </div>

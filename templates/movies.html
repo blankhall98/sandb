@@ -14,46 +14,18 @@
 <br><br><br>
 <div class="container">
     <div class="container d-flex flex-row justify-content-center flex-wrap">
+        {%for m in movies%}
         <div class="card col-9 mb-3">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <span><img src="{{url_for('static', filename='images/movie.png')}}" alt="" style="height: 1em; width: 1em;"><b> Chucky 3</b></span>
+                <span><img src="{{url_for('static', filename='images/movie.png')}}" alt="" style="height: 1em; width: 1em;"><b> {{m.title}}</b></span>
                 <img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em;">
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><img src="{{url_for('static', filename='images/theater.png')}}" alt="" style="height: 1em; width: 1em;"> Category: <i>Terror</i></li>
-              <li class="list-group-item"><img src="{{url_for('static', filename='images/star.png')}}" alt="" style="height: 1em; width: 1em;"> score: <i>3/5</i></li>
+              <li class="list-group-item"><img src="{{url_for('static', filename='images/theater.png')}}" alt="" style="height: 1em; width: 1em;"> Category: <i>{{m.category}}</i></li>
+              <li class="list-group-item"><img src="{{url_for('static', filename='images/star.png')}}" alt="" style="height: 1em; width: 1em;"> score: <i>{{m.score}}/5</i></li>
             </ul>
         </div>
-        <div class="card col-9 mb-3">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <span><img src="{{url_for('static', filename='images/movie.png')}}" alt="" style="height: 1em; width: 1em;"><b> Chucky 3</b></span>
-                <img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em;">
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><img src="{{url_for('static', filename='images/theater.png')}}" alt="" style="height: 1em; width: 1em;"> Category: <i>Terror</i></li>
-              <li class="list-group-item"><img src="{{url_for('static', filename='images/star.png')}}" alt="" style="height: 1em; width: 1em;"> score: <i>3/5</i></li>
-            </ul>
-        </div>
-        <div class="card col-9 mb-3">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <span><img src="{{url_for('static', filename='images/movie.png')}}" alt="" style="height: 1em; width: 1em;"><b> Chucky 3</b></span>
-                <img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em;">
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><img src="{{url_for('static', filename='images/theater.png')}}" alt="" style="height: 1em; width: 1em;"> Category: <i>Terror</i></li>
-              <li class="list-group-item"><img src="{{url_for('static', filename='images/star.png')}}" alt="" style="height: 1em; width: 1em;"> score: <i>3/5</i></li>
-            </ul>
-        </div>
-        <div class="card col-9 mb-3">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <span><img src="{{url_for('static', filename='images/movie.png')}}" alt="" style="height: 1em; width: 1em;"><b> This is a movie with a fucking</b></span>
-                <img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em;">
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><img src="{{url_for('static', filename='images/theater.png')}}" alt="" style="height: 1em; width: 1em;"> Category: <i>Terror</i></li>
-              <li class="list-group-item"><img src="{{url_for('static', filename='images/star.png')}}" alt="" style="height: 1em; width: 1em;"> score: <i>3/5</i></li>
-            </ul>
-        </div>
+        {%endfor%}
     </div>
 </div>
 <br><br><br>
