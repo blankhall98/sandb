@@ -96,28 +96,22 @@ def createLevels(max_lvl,base):
     return xp_req[1:]
 #lvl = createLevels(200,10)
 def getLvl(xp,lvl):
-    if xp < lvl[0]:
-        return 1
-    elif xp > lvl[-1]:
-        return len(lvl)
-    else:
-        act_lvl = 1
-        while xp > lvl[act_lvl]:
-            act_lvl = act_lvl+1
-        
-        return act_lvl+1
-
-def getLvl(xp,lvl):
     if float(xp) < lvl[0]:
-        return 1
+        pr = 1 - (float(xp)/lvl[0])
+        pr = pr*100
+        return (1, pr)
     elif float(xp) > lvl[-1]:
-        return len(lvl)
+        pr = 100
+        return (len(lvl), pr)
     else:
         act_lvl = 1
         while float(xp) > lvl[act_lvl]:
             act_lvl = act_lvl+1
+            
+        pr = 1 - ((lvl[int(act_lvl)]-float(xp))/(lvl[int(act_lvl)]-lvl[int(act_lvl-1)]))
+        pr = pr*100
         
-        return act_lvl+1
+        return (act_lvl+1,pr)
     
 
 class user_db(db.Model):
@@ -161,10 +155,10 @@ def index():
         couple_data = couple_db.query.first()
         partner = session["partner"]
         levels = createLevels(200,10)
-        level = getLvl(couple_data.xp,levels)
+        level, progress = getLvl(couple_data.xp,levels)
         couple_data.level = level
         db.session.commit()
-        return render_template('index.html',couple_data=couple_data,partner=partner)
+        return render_template('index.html',couple_data=couple_data,partner=partner,progress=progress)
     else:
         return redirect(url_for("login"))
 

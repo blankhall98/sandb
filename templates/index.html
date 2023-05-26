@@ -16,11 +16,12 @@
     <h5 class="text-dark"><b>Statistics</b></h5>
     <ul class="list-group">
         <li class="list-group-item d-flex justify-content-between"><span><img src="{{url_for('static', filename='images/start.png')}}" alt="..." class="img-action"> Since</span> <i>{{couple_data.start_date}}</i></li>
-        <li class="list-group-item d-flex justify-content-between align-items-center"><span><img src="{{url_for('static', filename='images/level-up.png')}}" alt="..." class="img-action"> Level</span>
-           <div class="lvlbar rounded bg-dark d-flex flex-row">
-            <div class="lvlbar bg-warning rounded" style="width: 15%">
-            </div>
-           </div><b>{{couple_data.level}}</b></li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span><img src="{{url_for('static', filename='images/level-up.png')}}" alt="..." class="img-action"> Level</span>
+        <div class="lvlbar rounded bg-dark d-flex flex-row">
+            <div class="lvlbar bg-warning rounded" style="width: {{progress}}%">
+        </div>
+        </div><b>{{couple_data.level}}</b></li>
         <li class="list-group-item d-flex justify-content-between"><span><img src="{{url_for('static', filename='images/medal.png')}}" alt="..." class="img-action"> Medals</span><b>0</b></li>
     </ul>
 </div>
