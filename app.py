@@ -190,7 +190,7 @@ def logout():
 #travels
 @app.route('/travels')
 def travels():
-    travels = travels_db.query.all()
+    travels = travels_db.query.order_by(travels_db._id.desc()).all()
     return render_template('travels.html',travels=travels)
 
 #add travel
@@ -229,7 +229,7 @@ def delete_travel(entry_id):
 #wanderungs
 @app.route('/wanderungs')
 def wanderungs():
-    wanders = wanderungs_db.query.all()
+    wanders = wanderungs_db.query.order_by(wanderungs_db._id.desc()).all()
     return render_template('wanderungs.html',wanders=wanders)
 
 #add wanderung
@@ -266,7 +266,7 @@ def delete_wanderung(entry_id):
 #restaurants
 @app.route('/restaurants')
 def restaurants():
-    restaurants = restaurants_db.query.all()
+    restaurants = restaurants_db.query.order_by(restaurants_db._id.desc()).all()
     return render_template('restaurants.html',restaurants=restaurants)
 
 #add restaurant
@@ -306,7 +306,7 @@ def delete_restaurant(entry_id):
 #movies
 @app.route('/movies',methods=['GET','POST'])
 def movies():
-    movies = movies_db.query.all()
+    movies = movies_db.query.order_by(movies_db._id.desc()).all()
     return render_template('movies.html',movies=movies)
 
 #add movie
@@ -343,7 +343,7 @@ def delete_movies(entry_id):
 #plans
 @app.route('/plans')
 def plans():
-    plans = plans_db.query.all()
+    plans = plans_db.query.order_by(plans_db._id.desc()).all()
     return render_template('plans.html',plans=plans)
 
 #add plan
@@ -380,7 +380,7 @@ def delete_plan(entry_id):
 #messages
 @app.route('/messages')
 def messages():
-    return render_template('messages.html', messages = messages_db.query.all())
+    return render_template('messages.html', messages = messages_db.query.order_by(messages_db._id.desc()).all())
 
 #add message
 @app.route('/addmessage',methods=['GET','POST'])
