@@ -213,6 +213,18 @@ def addtravel():
         return redirect(url_for('travels'))
     else:
         return render_template('addtravel.html')
+    
+@app.route('/delete_travel/<int:entry_id>', methods=['POST','GET'])
+def delete_travel(entry_id):
+    entry = travels_db.query.get(entry_id)
+    db.session.delete(entry)
+    db.session.commit()
+
+    couple = couple_db.query.first()
+    couple.xp = float(couple.xp) - points['Travels']
+    db.session.commit()
+
+    return redirect(url_for('travels'))
 
 #wanderungs
 @app.route('/wanderungs')
@@ -238,6 +250,18 @@ def addwanderung():
         return redirect(url_for('wanderungs'))
     else:
         return render_template('addwanderung.html')
+    
+@app.route('/delete_wanderung/<int:entry_id>', methods=['POST','GET'])
+def delete_wanderung(entry_id):
+    entry = wanderungs_db.query.get(entry_id)
+    db.session.delete(entry)
+    db.session.commit()
+
+    couple = couple_db.query.first()
+    couple.xp = float(couple.xp) - points['Wanderungs']
+    db.session.commit()
+
+    return redirect(url_for('wanderungs'))
 
 #restaurants
 @app.route('/restaurants')
@@ -266,6 +290,18 @@ def addrestaurant():
         return redirect(url_for('restaurants'))
     else:
         return render_template('addrestaurant.html')
+    
+@app.route('/delete_restaurant/<int:entry_id>', methods=['POST','GET'])
+def delete_restaurant(entry_id):
+    entry = restaurants_db.query.get(entry_id)
+    db.session.delete(entry)
+    db.session.commit()
+
+    couple = couple_db.query.first()
+    couple.xp = float(couple.xp) - points['Restaurants']
+    db.session.commit()
+
+    return redirect(url_for('restaurants'))
 
 #movies
 @app.route('/movies',methods=['GET','POST'])
@@ -291,6 +327,18 @@ def addmovie():
         return redirect(url_for('movies'))
     else:
         return render_template('addmovie.html')
+    
+@app.route('/delete_movies/<int:entry_id>', methods=['POST','GET'])
+def delete_movies(entry_id):
+    entry = movies_db.query.get(entry_id)
+    db.session.delete(entry)
+    db.session.commit()
+
+    couple = couple_db.query.first()
+    couple.xp = float(couple.xp) - points['Movies']
+    db.session.commit()
+
+    return redirect(url_for('movies'))
 
 #plans
 @app.route('/plans')
@@ -316,6 +364,18 @@ def addplan():
         return redirect(url_for('plans'))
     else:
         return render_template('addplan.html')
+    
+@app.route('/delete_plan/<int:entry_id>', methods=['POST','GET'])
+def delete_plan(entry_id):
+    entry = plans_db.query.get(entry_id)
+    db.session.delete(entry)
+    db.session.commit()
+
+    couple = couple_db.query.first()
+    couple.xp = float(couple.xp) - points['Plans']
+    db.session.commit()
+
+    return redirect(url_for('plans'))
 
 #messages
 @app.route('/messages')
@@ -339,6 +399,18 @@ def addmessage():
         return redirect(url_for("messages"))
     else:
         return render_template('addmessage.html')
+    
+@app.route('/delete_message/<int:entry_id>', methods=['POST','GET'])
+def delete_message(entry_id):
+    entry = messages_db.query.get(entry_id)
+    db.session.delete(entry)
+    db.session.commit()
+
+    couple = couple_db.query.first()
+    couple.xp = float(couple.xp) - points['Messages']
+    db.session.commit()
+
+    return redirect(url_for('messages'))
 
 #onwork
 @app.route('/onwork')

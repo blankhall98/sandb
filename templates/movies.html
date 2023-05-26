@@ -18,7 +18,7 @@
         <div class="card col-9 mb-3">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <span><img src="{{url_for('static', filename='images/movie.png')}}" alt="" style="height: 1em; width: 1em;"><b> {{m.title}}</b></span>
-                <img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em;">
+                <a href="{{ url_for('delete_movies', entry_id=m._id) }}"><img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em;"></a>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><img src="{{url_for('static', filename='images/theater.png')}}" alt="" style="height: 1em; width: 1em;"> Category: <i>{{m.category}}</i></li>

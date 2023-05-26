@@ -18,7 +18,7 @@
         <div class="card col-10 mb-3">
             <div class="card-header d-flex justify-content-between align-items-center">
               <span><img src="{{url_for('static', filename='images/island.png')}}" alt="" style="height: 1em; width: 1em;"><b> {{travels.title}}</b></span>
-              <img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em;">
+              <a href="{{ url_for('delete_travel', entry_id=t._id) }}"><img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em;"></a>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item d-flex flex-row justify-content-between"><span><i>Country </i></span><span>{{travels.country}}</span></li>

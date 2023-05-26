@@ -18,7 +18,7 @@
         <div class="card mb-3 col-9">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <span><b> {{r.title}}</b></span>
-                <img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em;">
+                <a href="{{ url_for('delete_restaurant', entry_id=r._id) }}"><img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em;"></a>
             </div>
             <div class="card-body">
               <p class="card-text d-flex justify-content-between"><span><img src="{{url_for('static', filename='images/menu.png')}}" alt="" style="height: 1em; width: 1em;"> <i>Food Type: </i></span> {{r.food_type}}</p>

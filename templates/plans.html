@@ -21,7 +21,7 @@
               <h6 class="card-subtitle mb-2 text-muted">Temp. Date: <i>{{p.date}}</i></h6>
               <p class="card-text">{{p.comment}}</p>
               <a href="#" class="card-link text-success">Mark as completed</a>
-              <a href="#" class="card-link text-danger">Delete plan</a>
+              <a href="{{ url_for('delete_plan', entry_id=p._id) }}" class="card-link text-danger">Delete plan</a>
             </div>
         </div>
         {%endfor%}
