@@ -1,9 +1,55 @@
 #imports
-from flask import Flask, render_template, redirect
-from flask_restful import Api, Resource, reqparse, abort
+from flask import Flask, render_template, redirect, url_for, request
+from flask_sqlalchemy import SQLAlchemy
 
 #initialize app
 app = Flask(__name__)
+app.secret_key = "##aladin##"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+#databases
+db = SQLAlchemy(app)
+
+class travels_db(db.Model):
+    _id = db.Column("id", db.Integer, primary_key=True)
+    title = db.Column("title", db.String(100))
+    country = db.Column("country", db.String(100))
+    city = db.Column("city", db.String(100))
+    days = db.Column("days", db.String(100))
+    date = db.Column("date", db.String(100))
+
+class wanderungs_db(db.Model):
+    _id = db.Column("id", db.Integer, primary_key=True)
+    title = db.Column("title", db.String(100))
+    date = db.Column("date", db.String(100))
+    description = db.Column("description", db.String(100))
+
+class restaurants_db(db.Model):
+    _id = db.Column("id", db.Integer, primary_key=True)
+    title = db.Column("title", db.String(100))
+    food_type = db.Column("food_type", db.String(100))
+    location = db.Column("location", db.String(100))
+    price_score = db.Column("price_score", db.String(100))
+    food_score = db.Column("food_score", db.String(100))
+    vibe_score = db.Column("vibe_score", db.String(100))
+
+class movies_db(db.Model):
+    _id = db.Column("id", db.Integer, primary_key=True)
+    title = db.Column("title", db.String(100))
+    category = db.Column("category", db.String(100))
+    score = db.Column("score", db.String(100))
+
+class plans_db(db.Model):
+    _id = db.Column("id", db.Integer, primary_key=True)
+    title = db.Column("title", db.String(100))
+    date = db.Column("date", db.String(100))
+    comment = db.Column("comment", db.String(100))
+
+class messages_db(db.Model):
+    _id = db.Column("id", db.Integer, primary_key=True)
+    message = db.Column("message", db.String(100))
+
 
 #outside functions
 def createLevels(max_lvl,base):
@@ -55,6 +101,16 @@ coupleData = {
     }
 }
 
+#points
+points = {
+    'Travels': 1000,
+    'Wanderungs': 250,
+    'Restaurants': 100,
+    'Movies': 50,
+    'Plans': 25,
+    'Messages': 10
+}
+
 ########## routes
 
 #index
@@ -63,7 +119,7 @@ def index():
     return render_template('index.html')
 
 #login
-@app.route('/login')
+@app.route('/login', methods=['GET','POST'])
 def login():
     return render_template('login.html')
 
@@ -73,9 +129,17 @@ def travels():
     return render_template('travels.html')
 
 #add travel
-@app.route('/addtravel')
+@app.route('/addtravel',methods=['GET','POST'])
 def addtravel():
-    return render_template('addtravel.html')
+    if request.method == 'POST':
+        title = request.form["title_instance"]
+        country = request.form["country_instance"]
+        city = request.form["city_instance"]
+        days = request.form["days_instance"]
+        date = request.form["date_instance"]
+        return redirect(url_for('travels'))
+    else:
+        return render_template('addtravel.html')
 
 #wanderungs
 @app.route('/wanderungs')
@@ -83,9 +147,15 @@ def wanderungs():
     return render_template('wanderungs.html')
 
 #add wanderung
-@app.route('/addwanderung')
+@app.route('/addwanderung',methods=['GET','POST'])
 def addwanderung():
-    return render_template('addwanderung.html')
+    if request.method == 'POST':
+        title = request.form["title_instance"]
+        date = request.form["date_instance"]
+        description = request.form["description_instance"]
+        return redirect(url_for('wanderungs'))
+    else:
+        return render_template('addwanderung.html')
 
 #restaurants
 @app.route('/restaurants')
@@ -93,19 +163,34 @@ def restaurants():
     return render_template('restaurants.html')
 
 #add restaurant
-@app.route('/addrestaurant')
+@app.route('/addrestaurant',methods=['GET','POST'])
 def addrestaurant():
-    return render_template('addrestaurant.html')
+    if request.method == 'POST':
+        title = request.form["title_instance"]
+        food_type = request.form["ftype_instance"]
+        location = request.form["location_instance"]
+        price_score = request.form["pscore_instance"]
+        food_score = request.form["fscore_instance"]
+        vibe_score = request.form["vscore_instance"]
+        return redirect(url_for('restaurants'))
+    else:
+        return render_template('addrestaurant.html')
 
 #movies
-@app.route('/movies')
+@app.route('/movies',methods=['GET','POST'])
 def movies():
     return render_template('movies.html')
 
 #add movie
-@app.route('/addmovie')
+@app.route('/addmovie',methods=['GET','POST'])
 def addmovie():
-    return render_template('addmovie.html')
+    if request.method == 'POST':
+        title = request.form["title_instance"]
+        category = request.form["category_instance"]
+        score = request.form["score_instance"]
+        return redirect(url_for('movies'))
+    else:
+        return render_template('addmovie.html')
 
 #plans
 @app.route('/plans')
@@ -113,9 +198,15 @@ def plans():
     return render_template('plans.html')
 
 #add plan
-@app.route('/addplan')
+@app.route('/addplan',methods=['GET','POST'])
 def addplan():
-    return render_template('addplan.html')
+    if request.method == 'POST':
+        title = request.form["title_instance"]
+        date = request.form["date_instance"]
+        comment = request.form["comment_instance"]
+        return redirect(url_for('plans'))
+    else:
+        return render_template('addplan.html')
 
 #messages
 @app.route('/messages')
@@ -123,9 +214,13 @@ def messages():
     return render_template('messages.html')
 
 #add message
-@app.route('/addmessage')
+@app.route('/addmessage',methods=['GET','POST'])
 def addmessage():
-    return render_template('addmessage.html')
+    if request.method == "POST":
+        message = request.form["message_instance"]
+        return redirect(url_for("messages"))
+    else:
+        return render_template('addmessage.html')
 
 #onwork
 @app.route('/onwork')
