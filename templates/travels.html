@@ -11,8 +11,23 @@
     <a href="{{url_for('addtravel')}}"><button class="btn btn-warning mt-3">add travel</button></a>
 </div>
 
+<br><br><br>
 <div class="container">
-    <div class="container"></div>
+    <div class="container d-flex flex-row justify-content-center flex-wrap">
+        <div class="card col-10 mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <span><img src="{{url_for('static', filename='images/island.png')}}" alt="" style="height: 1em; width: 1em;"><b> Viaje a Cancún</b></span>
+              <img src="{{url_for('static', filename='images/delete.png')}}" alt="" style="height: 1em; width: 1em;">
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex flex-row justify-content-between"><span><i>Country </i></span><span>Mexico</span></li>
+              <li class="list-group-item d-flex flex-row justify-content-between"><span><i>City </i></span><span>Cancún</span></li>
+              <li class="list-group-item d-flex flex-row justify-content-between"><span><i>Total Days </i></span><span>5</span></li>
+              <li class="list-group-item d-flex flex-row justify-content-between"><span><i>Date </i></span><span>March, 2023</span></li>
+            </ul>
+        </div>
+    </div>
 </div>
+<br><br><br>
 
 {%endblock%}
